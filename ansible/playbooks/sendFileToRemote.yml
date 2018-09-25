@@ -1,0 +1,11 @@
+---
+- hosts: ec2-13-236-167-161.ap-southeast-2.compute.amazonaws.com
+#- hosts: ec2-13-210-72-213.ap-southeast-2.compute.amazonaws.com
+  tasks:
+    - name: copying file with owner and permissions
+      copy:
+        src: /tmp/testfile.txt
+        dest: /tmp/testfile.txt
+        owner: ec2-user
+        group: ec2-user
+        mode: 0750
