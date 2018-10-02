@@ -3,8 +3,8 @@
   tasks:
     - name: copying file with owner and permissions
       copy:
-        src: FilesToSend/*
-        dest: /tmp/testfile.txt
+        src: FilesToSend/testfile4.txt
+        dest: /tmp/testfile4.txt
         owner: ec2-user
         group: ec2-user
         mode: 0750
