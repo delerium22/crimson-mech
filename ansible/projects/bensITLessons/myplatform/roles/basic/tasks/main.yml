@@ -1,4 +1,5 @@
-- name: "Installing VIM"
+---
+- name: Installing VIM
   apt: 
    name: vim
    state: present
