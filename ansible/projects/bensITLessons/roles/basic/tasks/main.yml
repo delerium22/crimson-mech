@@ -2,11 +2,6 @@
   yum:
     name: vim 
     state: present
-    
-- name: "Installing DNS Utils"
-  yum:
-    name: dnsutils
-    state: present
 
 - name: "Installing GIT"
   yum:
