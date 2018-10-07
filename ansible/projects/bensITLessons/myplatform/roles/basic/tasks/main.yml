@@ -1,5 +1,8 @@
 ---
-- name: Installing VIM
-  apt: 
-   name: vim
-   state: present
+- name: Copying installables to remote hosts
+  template:
+    src: /tmp/testfile.txt
+    dest: /tmp/testfile.txt
+    owner: ec2-user
+    group: ec2-user
+    mode: 0660
