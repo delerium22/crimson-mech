@@ -1,0 +1,16 @@
+- name: "Installing basic packages"
+  yum:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+    - vim
+    - git
+
+- name: Copying installables to remote hosts
+  template:
+    src: files/HWFile.txt
+    dest: /tmp/HWFile.txt
+    owner: ec2-user
+    group: ec2-user
+    mode: 0660
