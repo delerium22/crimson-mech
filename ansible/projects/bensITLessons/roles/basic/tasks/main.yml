@@ -1,9 +1,7 @@
 - name: "Installing VIM"
   yum:
-    name: vim 
+    name: {{ item }}
     state: present
-
-- name: "Installing GIT"
-  yum:
-    name: git
-    state: present
+    with items:
+    - vim
+    - git
