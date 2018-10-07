@@ -1,2 +1,4 @@
 - name: "Installing VIM"
-  apt: pkg=vim state=installed
+  apt: 
+   name: vim
+   state: present
