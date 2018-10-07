@@ -1,4 +1,0 @@
-- name: "Installing VIM"
-  yum:
-    name: vim 
-    state: present
