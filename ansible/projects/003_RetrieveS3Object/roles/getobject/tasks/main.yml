@@ -1,0 +1,6 @@
+- name: "Downloading install files"
+  aws_s3:
+    bucket: cm-227-install-files
+    object: jenkins-2.138.1-1.1.noarch_RHLinux.rpm
+    dest: /tmp/jenkinsinstall.rpm
+    mode: get
