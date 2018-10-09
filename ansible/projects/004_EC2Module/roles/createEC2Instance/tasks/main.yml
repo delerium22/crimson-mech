@@ -6,4 +6,5 @@
     wait: yes
     count: 1
     vpc_subnet_id: subnet-b77e2bd0
+    region: ap-southeast-2
     assign_public_ip: yes
