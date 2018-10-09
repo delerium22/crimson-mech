@@ -1,5 +1,7 @@
 - name: "Provisioning a basic EC2 instance server"
   ec2:
+    aws_access_key: XXX
+    aws_secret_key: XXX
     key_name: ConfigNode_KP
     instance_type: t2.micro
     image: ami-67589505
