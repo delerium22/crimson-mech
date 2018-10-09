@@ -1,5 +1,5 @@
 - name: "Provisioning a basic EC2 instance server"
-  - ec2:
+  ec2:
     key_name: ConfigNode_KP
     instance_type: t2.micro
     image: ami-67589505
