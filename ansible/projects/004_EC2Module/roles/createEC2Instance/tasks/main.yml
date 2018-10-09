@@ -1,0 +1,9 @@
+- name: "Provisioning a basic EC2 instance server"
+  - ec2:
+    key_name: ConfigNode_KP
+    instance_type: t2.micro
+    image: ami-67589505
+    wait: yes
+    count: 1
+    vpc_subnet_id: subnet-b77e2bd0
+    assign_public_ip: yes
