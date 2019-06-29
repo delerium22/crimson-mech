@@ -2,5 +2,5 @@
   become: "yes"
   git:
     repo: 'git@github.com:delerium22/crimson-mech.git'
-    dest: '/tmp'
+    dest: '/usr/repos'
     accept_hostkey: "yes"
