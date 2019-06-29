@@ -8,9 +8,9 @@
 - name: Create a key pair in nab git
   become: "yes"
   uri:
-    url: https://api.github.com/api/v3/user/keys
+    url: https://api.github.com/user/keys
     method: POST
-    user: P733287
+    user: "{{ git_user }}"
     password: "{{ git_password }}"
     body: '{"title":"{{ key_title }}","key":"{{ pubk.stdout }}"}'
     force_basic_auth: yes
