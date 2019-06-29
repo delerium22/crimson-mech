@@ -1,0 +1,5 @@
+#Variables to use for add-key-to-git role
+
+git_user: "??????"
+git_password: "??????"
+timestamp: "{{lookup('pipe', 'date +%Y%m%d%H%M%SZ')}}"

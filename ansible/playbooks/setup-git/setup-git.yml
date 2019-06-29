@@ -11,6 +11,6 @@
       key_comment: "danielroach22@gmail.com"
     - role: add-key-to-git
       key_location: ~/.ssh/id_rsa.pub
-      key_title: "admin - server"
+      key_title: "danielroach - admin server"
     - checkout-git-repos
   tags: setup-ec2
