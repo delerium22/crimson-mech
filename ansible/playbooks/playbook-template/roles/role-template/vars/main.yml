@@ -1,0 +1,4 @@
+#Variables to use for the create-ami role
+
+instance_id: "i-0e67b5fae19b5d116"
+timestamp: "{{lookup('pipe', 'date +%Y%m%d%H%M%SZ')}}"
