@@ -46,3 +46,8 @@ echo $ec2_instance_id
 # assume the new admin role onto this EC2 instance
 aws ec2 associate-iam-instance-profile --instance-id $ec2_instance_id --iam-instance-profile Name=admin-role-ec2
 
+# Checkout the repo for building the tooling server
+git clone git@github.com:delerium22/build-tooling-server-playbook.git /tmp/build-tooling-server-playbook
+
+# run the build-tooling-server playbook
+ansible-playbook /tmp/build-tooling-server-playbook/build-tooling-server.yml
