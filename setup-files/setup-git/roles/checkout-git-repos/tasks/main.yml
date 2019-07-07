@@ -1,0 +1,6 @@
+- name: Checkout the git repo
+  become: "yes"
+  git:
+    repo: 'git@github.com:delerium22/crimson-mech.git'
+    dest: '/usr/repos/crimson-mech'
+    accept_hostkey: "yes"

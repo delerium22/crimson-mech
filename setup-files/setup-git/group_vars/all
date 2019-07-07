@@ -1,0 +1,4 @@
+---
+# Variable and values listed here apply to this whole playbook
+
+random_num: "{{ 100 | random }}"

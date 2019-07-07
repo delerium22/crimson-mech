@@ -1,0 +1,16 @@
+---
+- name: Setup git on server
+  hosts: localhost
+
+- name: Run the git setup roles and tasks
+  hosts: localhost
+  roles:
+    - setup-git
+    - role: generate-ssh-keys
+      key_location: "/root/.ssh/id_rsa"
+      key_comment: "danielroach22@gmail.com"
+    - role: add-key-to-git
+      key_location: ~/.ssh/id_rsa.pub
+      key_title: "danielroach - admin server"
+    - checkout-git-repos
+  tags: setup-ec2

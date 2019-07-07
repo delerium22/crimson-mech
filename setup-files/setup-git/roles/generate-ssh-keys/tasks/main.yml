@@ -1,0 +1,13 @@
+- name: Generate SSH key
+  become: "yes"
+  shell: ssh-keygen -t rsa -b 4096 -C "{{ key_comment }}" -f "{{ key_location }}" -P "" 
+  args:
+    executable: /bin/bash
+
+- name: Start the SSH Agent and add the ssh identity key
+  become: "yes"
+  shell: |
+    eval $(ssh-agent -s)
+    ssh-add "{{ key_location }}"
+  args:
+    executable: /bin/bash
