@@ -1,6 +1,6 @@
-# Project Title
+# Homebase
 
-One Paragraph of project description goes here
+This repository is for all general scripts and files related to scripting activities and programs being worked on.
 
 ## Getting Started
 
