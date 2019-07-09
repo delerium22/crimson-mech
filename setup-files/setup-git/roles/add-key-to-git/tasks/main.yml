@@ -15,4 +15,4 @@
     body: '{"title":"{{ key_title }}-{{ timestamp }}","key":"{{ pubk.stdout }}"}'
     force_basic_auth: yes
     body_format: json
-    status_code: 201
+    status_code: "201"
