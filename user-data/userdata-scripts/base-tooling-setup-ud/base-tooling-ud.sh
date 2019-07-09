@@ -3,6 +3,7 @@
 #variables
 aws_access_key=????????????????
 aws_secret_access_key=?????????????
+git_api_token=?????????????
 region=ap-southeast-2
 
 #base install packages
@@ -45,6 +46,12 @@ echo $ec2_instance_id
 
 # assume the new admin role onto this EC2 instance
 aws ec2 associate-iam-instance-profile --instance-id $ec2_instance_id --iam-instance-profile Name=admin-role-ec2
+
+aws ssm put-parameter \
+    --name "/non_prod/tooling/git_api_token" \
+    --value "$git_api_token" \
+    --type "SecureString" \
+    --tier Standard
 
 # Checkout the repo for building the tooling server
 git clone git@github.com:delerium22/build-tooling-server-playbook.git /tmp/build-tooling-server-playbook
