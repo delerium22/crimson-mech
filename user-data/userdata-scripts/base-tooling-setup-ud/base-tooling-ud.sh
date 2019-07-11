@@ -11,14 +11,14 @@ git_api_token=?????????????
 #general vars
 region=ap-southeast-2
 
-#base install packages
+# base install packages
 yum -y update yum
 yum -y install python
 yum -y install wget
 easy_install pip
 pip install ansible
 
-#aws cli install and setup
+# aws cli install and setup
 pip install awscli --upgrade --user
 export PATH=~/.local/bin:$PATH
 echo 'export PATH=~/.local/bin:$PATH' >> ~/.bashrc
@@ -26,12 +26,12 @@ echo -e "$aws_access_key \n$aws_secret_access_key \n$region \n\n" >> /tmp/aws_cl
 aws configure < /tmp/aws_cli_cre.txt
 rm -f /tmp/aws_cli_cre.txt
 
-#copy resources for initial setup
-#retrieves the ansaible playbook for adding the git key of the server to enable connectivity
-#retrieves the iam role trust files for the role creation commands
+# copy resources for initial setup
+# retrieves the ansaible playbook for adding the git key of the server to enable connectivity
+# retrieves the iam role trust files for the role creation commands
 aws s3 sync s3://cm22-resources /tmp/
 
-#run the setup playbook for GIT hub use
+# run the setup playbook for GIT hub use
 ansible-playbook /tmp/setup-files/setup-git/setup-git.yml
 
 ### Steps to create an admin role for the ec2 to use for aws cli commands
@@ -44,7 +44,7 @@ aws iam create-instance-profile --instance-profile-name admin-role-ec2
 # Finally, add the role to the instance profile
 aws iam add-role-to-instance-profile --instance-profile-name admin-role-ec2 --role-name admin-role-for-ec2
 
-# get the current ev2 instance ID
+# get the current ec2 instance ID
 die() { status=$1; shift; echo "FATAL: $*"; exit $status; }
 ec2_instance_id="`wget -q -O - http://169.254.169.254/latest/meta-data/instance-id || die \"wget instance-id has failed: $?\"`"
 echo $ec2_instance_id
