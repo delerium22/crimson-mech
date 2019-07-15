@@ -34,5 +34,10 @@ git clone https://delerium22:$git_api_token@github.com/delerium22/build-tooling-
 # run the build-tooling-server playbook
 ansible-playbook /tmp/build-tooling-server-playbook/build-tooling-server.yml
 
+# get the current ec2 instance ID
+die() { status=$1; shift; echo "FATAL: $*"; exit $status; }
+ec2_instance_id="`wget -q -O - http://169.254.169.254/latest/meta-data/instance-id || die \"wget instance-id has failed: $?\"`"
+echo $ec2_instance_id
+
 # terminate self
 aws ec2 terminate-instances --instance-ids $ec2_instance_id
