@@ -35,4 +35,4 @@ git clone https://delerium22:$git_api_token@github.com/delerium22/build-tooling-
 ansible-playbook /tmp/build-tooling-server-playbook/build-tooling-server.yml
 
 # terminate self
-#aws ec2 terminate-instances --instance-ids $ec2_instance_id
+aws ec2 terminate-instances --instance-ids $ec2_instance_id
